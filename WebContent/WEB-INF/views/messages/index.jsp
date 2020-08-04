@@ -14,11 +14,12 @@
                     <a href="${pageContext.request.contextPath}/show?id=${message.id}">
                         <c:out value="${message.id}" />
                     </a>
-                   <c:out value="${message.content}" />
+                    ：&gt; <c:out value="${message.content}" />
                 </li>
             </c:forEach>
         </ul>
-<div id="pagination">
+
+        <div id="pagination">
             （全 ${messages_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((messages_count - 1) / 15) + 1}" step="1">
                 <c:choose>
@@ -31,8 +32,6 @@
                 </c:choose>
             </c:forEach>
         </div>
-
-        <p><a href="${pageContext.request.contextPath}/new">新規タスクの投稿</a></p>
-
+        <p><a href="${pageContext.request.contextPath}/new">新規メッセージの投稿</a></p>
     </c:param>
 </c:import>
